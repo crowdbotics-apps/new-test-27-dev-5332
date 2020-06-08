@@ -7,28 +7,53 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0002_load_initial_data'),
+        ("home", "0002_load_initial_data"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='R2',
+            name="R2",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('r2', models.BigIntegerField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("r2", models.BigIntegerField()),
             ],
         ),
         migrations.AddField(
-            model_name='customtext',
-            name='r1',
+            model_name="customtext",
+            name="r1",
             field=models.BigIntegerField(blank=True, null=True),
         ),
         migrations.CreateModel(
-            name='R1',
+            name="R1",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('r1', models.BigIntegerField()),
-                ('r2', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='r1_r2', to='home.R2')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("r1", models.BigIntegerField()),
+                (
+                    "r2",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="r1_r2",
+                        to="home.R2",
+                    ),
+                ),
             ],
         ),
     ]

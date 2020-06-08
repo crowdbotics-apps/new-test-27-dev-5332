@@ -37,6 +37,7 @@ class HomePage(models.Model):
 class R2(models.Model):
     "Generated Model"
     r2 = models.BigIntegerField()
+    r2d = models.BigIntegerField(null=True, blank=True,)
 
 
 class R1(models.Model):
